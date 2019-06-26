@@ -74,7 +74,21 @@ int main() {
     }
     if(inf.is_open())
     {
-       
+       for(int k=1;k<6;k++)
+		{
+			inf<<number<<" "<<Full Name<<" "<<achievement;
+		}
+		double  sum(double a[], int k)
+        {
+            int i;
+            double sum = 0;
+            for (i = 1; i<k - 1; i++)
+            {
+                sum = sum + a[i];
+            }
+            return sum;
+        }
+        
         inf.close();
         
     }
