@@ -78,7 +78,7 @@ int main() {
 		{
 			inf<<number<<" "<<Full Name<<" "<<achievement;
 		}
-		double  sum(double a[], int k)
+       double  sum(double a[], int k)
         {
             int i;
             double sum = 0;
