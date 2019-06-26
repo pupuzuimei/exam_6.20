@@ -1,24 +1,18 @@
-//
-//  main.cpp
-//  exam_6.20
-//
-//  Created by s20181106278 on 2019/6/20.
-//  Copyright © 2019 s20181106278. All rights reserved.
-//
-
 #include <iostream>
 #include<fstream>
 #include<string>
 using namespace std;
-	score play(10);
+	
     double read[10];
     double a[10];
     double pp[10];
     double qq[10];
     double t;
-	int i,j,number;
-	char Full Name,sex,school;
+	int i,j;
+	char FullName,sex,school;
 	double achievement[10];
+     double number;
+     string str;
 int main() {
     char name[20];
     int num=0;
@@ -33,7 +27,7 @@ int main() {
 		{
 			for(j=0;j<5;j++)
 			{
-				onf>>number>>" ">>Full Name>>" ">>sex>>" ">>school;
+				onf>>number>>" ">>FullName>>" ">>sex>>" ">>school;
 			}
 		} 
         onf.close();
@@ -48,6 +42,8 @@ int main() {
 			{
 				enf.getline(store,sizeof(store));
 				std::istringstream iss(store);
+				iss>>number;
+				iss>>str;
 			}
 			i=0;
 			while (iss >> read[i])
@@ -74,10 +70,10 @@ int main() {
     }
     if(inf.is_open())
     {
-       for(int k=1;k<6;k++)
-		{
-			inf<<number<<" "<<Full Name<<" "<<achievement;
-		}
+       class score{
+	        private:
+	          	int k;
+	        public:  	
        double  sum(double a[], int k)
         {
             int i;
@@ -89,9 +85,25 @@ int main() {
             return sum;
         }
         
-        inf.close();
+        double  aver(double a[],int k)
+        {
+            double sum=0;
+            double aver=0;
+            if (k<9)
+            {
+                for (int i = 1; i<k - 1; i++)
+                {
+                    sum = sum + a[i];
+                }
+            aver = sum / (k - 2);
+            }
+        }
+        return aver;
+        };
         
+     for( k=1;k<6;k++)
+		{
+			inf<<number<<" "<<FullName<<" "<<achievement;
+		}
+        inf.close();
     }
-    return 0;
-}
-
