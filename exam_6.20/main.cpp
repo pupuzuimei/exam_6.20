@@ -43,10 +43,10 @@ int main() {
         int line;
 		for(line=2;line<6;line++)
 		{
-			in.seekg(0,ios::beg);
+			enf.seekg(0,ios::beg);
 			for(int i=0;i<line<i++)
 			{
-				in.getline(store,sizeof(store));
+				enf.getline(store,sizeof(store));
 				std::istringstream iss(store);
 			}
 			i=0;
