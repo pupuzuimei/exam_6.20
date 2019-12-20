@@ -1,109 +1,560 @@
-#include <iostream>
-#include<fstream>
-#include<string>
-using namespace std;
-	
-    double read[10];
-    double a[10];
-    double pp[10];
-    double qq[10];
-    double t;
-	int i,j;
-	char FullName,sex,school;
-	double achievement[10];
-     double number;
-     string str;
-int main() {
-    char name[20];
-    int num=0;
-    char sex;
-    char sch[20];
-    ofstream inf("/Users/s20181106278/Desktop/inf.txt");
-    ifstream onf("/Users/s20181106278/Desktop/onf.txt");
-    ifstream enf("/Users/s20181106278/Desktop/enf.txt");
-    if(onf.is_open())
+int pin = 13;
+int val;
+void setup() {
+    
+    Serial.begin(9600);
+    pinMode(pin,OUTPUT);
+}
+
+
+void loop() {
+    
+    val = Serial.read();
+    switch (val)
     {
-        for(i=0;i<7;i++)
-		{
-			for(j=0;j<5;j++)
-			{
-				onf>>number>>" ">>FullName>>" ">>sex>>" ">>school;
-			}
-		} 
-        onf.close();
-    }
-    if(enf.is_open())
-    {
-        int line;
-		for(line=2;line<6;line++)
-		{
-			enf.seekg(0,ios::beg);
-			for(int i=0;i<line<i++)
-			{
-				enf.getline(store,sizeof(store));
-				std::istringstream iss(store);
-				iss>>number;
-				iss>>str;
-			}
-			i=0;
-			while (iss >> read[i])
-            {
-                achievement[i] = read[i];
-                i++;
-            }
-            pp[line]=play.sum(a); 
-            qq[line]=play.aver(a); 
-		}
-        for (int m = 0; m<5; m++)
+        case 'a':
         {
-            for (int n = 0; n<5-m-1; n++)
-           {
-               if (pp[n]>pp[n+ 1])
-              {
-                  t = pp[n];
-                  pp[n] = pp[n + 1];
-                  pp[n + 1] = t;
-              } 
-           }
+            Serial.println("a");
+            digitalWrite(pin,HIGH);
+            delay(1000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            digitalWrite(pin,HIGH);
+            delay(5000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            
+            break;
         }
-       enf.close();
-    }
-    if(inf.is_open())
-    {
-       class score{
-	        private:
-	          	int k;
-	        public:  	
-       double  sum(double a[], int k)
+        case 'b':
         {
-            int i;
-            double sum = 0;
-            for (i = 1; i<k - 1; i++)
+            Serial.println("b");
+            digitalWrite(pin,HIGH);
+            delay(5000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            for(int i=0;i<3;i++)
             {
-                sum = sum + a[i];
+                digitalWrite(pin,HIGH);
+                delay(1000);
+                digitalWrite(pin,LOW);
+                delay(1000);
             }
-            return sum;
+            
+            break;
         }
-        
-        double  aver(double a[],int k)
+        case 'c':
         {
-            double sum=0;
-            double aver=0;
-            if (k<9)
+            Serial.println("c");
+            for(int i=0;i<2;i++)
             {
-                for (int i = 1; i<k - 1; i++)
-                {
-                    sum = sum + a[i];
-                }
-            aver = sum / (k - 2);
+                digitalWrite(pin,HIGH);
+                delay(5000);
+                digitalWrite(pin,LOW);
+                delay(1000);
+                digitalWrite(pin,HIGH);
+                delay(1000);
+                digitalWrite(pin,LOW);
+                delay(1000);
             }
+            
+            break;
         }
-        return aver;
-        };
-        
-     for( k=1;k<6;k++)
-		{
-			inf<<number<<" "<<FullName<<" "<<achievement;
-		}
-        inf.close();
+        case 'd':
+        {
+            Serial.println("d");
+            digitalWrite(pin,HIGH);
+            delay(5000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            for(int i=0;i<2;i++)
+            {
+                digitalWrite(pin,HIGH);
+                delay(1000);
+                digitalWrite(pin,LOW);
+                delay(1000);
+            }
+            
+            break;
+        }
+        case 'e':
+        {
+            Serial.println("e");
+            digitalWrite(pin,HIGH);
+            delay(1000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            
+            break;
+        }
+        case 'f':
+        {
+            Serial.println("f");
+            for(int i=0;i<2;i++)
+            {
+                digitalWrite(pin,HIGH);
+                delay(1000);
+                digitalWrite(pin,LOW);
+                delay(1000);
+            }
+            digitalWrite(pin,HIGH);
+            delay(5000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            digitalWrite(pin,HIGH);
+            delay(1000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            
+            break;
+        }
+        case 'g':
+        {
+            Serial.println("g");
+            for(int i=0;i<2;i++)
+            {
+                digitalWrite(pin,HIGH);
+                delay(5000);
+                digitalWrite(pin,LOW);
+                delay(1000);
+            }
+            
+            digitalWrite(pin,HIGH);
+            delay(1000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            
+            break;
+        }
+        case 'h':
+        {
+            Serial.println("h");
+            for(int i=0;i<4;i++)
+            {
+                digitalWrite(pin,HIGH);
+                delay(1000);
+                digitalWrite(pin,LOW);
+                delay(1000);
+            }
+            
+            break;
+        }
+        case 'i':
+        {
+            Serial.println("i");
+            for(int i=0;i<2;i++)
+            {
+                digitalWrite(pin,HIGH);
+                delay(1000);
+                digitalWrite(pin,LOW);
+                delay(1000);
+            }
+            
+            break;
+        }
+        case 'j':
+        {
+            Serial.println("j");
+            digitalWrite(pin,HIGH);
+            delay(1000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            for(int i=0;i<3;i++)
+            {
+                digitalWrite(pin,HIGH);
+                delay(5000);
+                digitalWrite(pin,LOW);
+                delay(1000);
+            }
+            
+            break;
+        }
+        case 'k':
+        {
+            Serial.println("k");
+            digitalWrite(pin,HIGH);
+            delay(5000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            digitalWrite(pin,HIGH);
+            delay(1000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            digitalWrite(pin,HIGH);
+            delay(5000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            
+            break;
+        }
+        case 'l':
+        {
+            Serial.println("l");
+            digitalWrite(pin,HIGH);
+            delay(1000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            digitalWrite(pin,HIGH);
+            delay(5000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            for(int i=0;i<2;i++)
+            {
+                digitalWrite(pin,HIGH);
+                delay(1000);
+                digitalWrite(pin,LOW);
+                delay(1000);
+            }
+            
+            break;
+        }
+        case 'm':
+        {
+            Serial.println("m");
+            for(int i=0;i<2;i++)
+            {
+                digitalWrite(pin,HIGH);
+                delay(5000);
+                digitalWrite(pin,LOW);
+                delay(1000);
+            }
+            
+            break;
+        }
+        case 'n':
+        {
+            Serial.println("n");
+            digitalWrite(pin,HIGH);
+            delay(5000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            digitalWrite(pin,HIGH);
+            delay(1000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            
+            break;
+        }
+        case 'o':
+        {
+            Serial.println("o");
+            for(int i=0;i<3;i++)
+            {
+                digitalWrite(pin,HIGH);
+                delay(5000);
+                digitalWrite(pin,LOW);
+                delay(1000);
+            }
+            
+            break;
+        }
+        case 'p':
+        {
+            Serial.println("p");
+            digitalWrite(pin,HIGH);
+            delay(1000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            for(int i=0;i<2;i++)
+            {
+                digitalWrite(pin,HIGH);
+                delay(5000);
+                digitalWrite(pin,LOW);
+                delay(1000);
+            }
+            digitalWrite(pin,HIGH);
+            delay(1000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            
+            break;
+        }
+        case 'q':
+        {
+            Serial.println("q");
+            for(int i=0;i<2;i++)
+            {
+                digitalWrite(pin,HIGH);
+                delay(5000);
+                digitalWrite(pin,LOW);
+                delay(1000);
+            }
+            digitalWrite(pin,HIGH);
+            delay(1000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            digitalWrite(pin,HIGH);
+            delay(5000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            
+            break;
+        }
+        case 'r':
+        {
+            Serial.println("r");
+            digitalWrite(pin,HIGH);
+            delay(1000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            digitalWrite(pin,HIGH);
+            delay(5000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            digitalWrite(pin,HIGH);
+            delay(1000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            
+            break;
+        }
+        case 's':
+        {
+            Serial.println("s");
+            for(int i=0;i<3;i++)
+            {
+                digitalWrite(pin,HIGH);
+                delay(1000);
+                digitalWrite(pin,LOW);
+                delay(1000);
+            }
+            
+            break;
+        }
+        case 't':
+        {
+            Serial.println("t");
+            digitalWrite(pin,HIGH);
+            delay(5000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            
+            break;
+        }
+        case 'u':
+        {
+            Serial.println("u");
+            for(int i=0;i<2;i++)
+            {
+                digitalWrite(pin,HIGH);
+                delay(1000);
+                digitalWrite(pin,LOW);
+                delay(1000);
+            }
+            digitalWrite(pin,HIGH);
+            delay(5000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            
+            break;
+        }
+        case 'v':
+        {
+            Serial.println("v");
+            for(int i=0;i<3;i++)
+            {
+                digitalWrite(pin,HIGH)
+                delay(1000);
+                digitalWrite(pin,LOW);
+                delay(1000);
+            }
+            digitalWrite(pin,HIGH);
+            delay(5000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            
+            break;
+        }
+        case 'w':
+        {
+            Serial.println("w");
+            digitalWrite(pin,HIGH);
+            delay(1000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            for(int i=0;i<2;i++)
+            {
+                digitalWrite(pin,HIGH);
+                delay(5000);
+                digitalWrite(pin,LOW);
+                delay(1000);
+            }
+            
+            break;
+        }
+        case 'x':
+        {
+            Serial.println("x");
+            digitalWrite(pin,HIGH);
+            delay(5000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            for(int i=0;i<2;i++)
+            {
+                digitalWrite(pin,HIGH);
+                delay(1000);
+                digitalWrite(pin,LOW);
+                delay(1000);
+            }
+            digitalWrite(pin,HIGH);
+            delay(5000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            
+            break;
+        }
+        case 'y':
+        {
+            Serial.println("y");
+            digitalWrite(pin,HIGH);
+            delay(5000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            digitalWrite(pin,HIGH);
+            delay(1000);
+            digitalWrite(pin,LOW);
+            delay(1000);
+            for(int i=0;i<2;i++)
+            {
+                digitalWrite(pin,HIGH);
+                delay(5000);
+                digitalWrite(pin,LOW);
+                delay(1000);
+            }
+            
+            break;
+        }
+        case 'z':
+        {
+            Serial.println("z");
+            for(int i=0;i<2;i++)
+            {
+                digitalWrite(pin,HIGH);
+                delay(5000);
+                digitalWrite(pin,LOW);
+                delay(1000);
+            }
+            for(int i=0;i<2;i++)
+            {
+                digitalWrite(pin,HIGH);
+                delay(1000);
+                digitalWrite(pin,LOW);
+                delay(1000);
+            }
+            
+            break;
+        }
     }
+    
+    
+    
+    /*if(val="hello world")
+     {
+     //h
+     for(int i=0;i<4;i++)
+     {
+     digitalWrite(pin,HIGH);//点亮
+     delay(1000);
+     digitalWrite(pin,LOW);//熄灭
+     delay(1000);
+     }
+     //e
+     digitalWrite(pin,HIGH);//点亮
+     delay(1000);
+     digitalWrite(pin,LOW);//熄灭
+     delay(1000);
+     //ll
+     for(int i=0;i<2;i++)
+     {
+     digitalWrite(pin,HIGH);//点亮
+     delay(1000);
+     digitalWrite(pin,LOW);//熄灭
+     delay(1000);
+     digitalWrite(pin,HIGH);//点亮
+     delay(5000);
+     digitalWrite(pin,LOW);//熄灭
+     delay(1000);
+     for(int j=0;j<2;j++)
+     {
+     digitalWrite(pin,HIGH);//点亮
+     delay(1000);
+     digitalWrite(pin,LOW);//熄灭
+     delay(1000);
+     }
+     }
+     //o
+     for(int i=0;i<3;i++)
+     {
+     digitalWrite(pin,HIGH);//点亮
+     delay(5000);
+     digitalWrite(pin,LOW);//熄灭
+     delay(1000);
+     }
+     //w
+     digitalWrite(pin,HIGH);//点亮
+     delay(1000);
+     digitalWrite(pin,LOW);//熄灭
+     delay(1000);
+     for(int i=0;i<2;i++)
+     {
+     digitalWrite(pin,HIGH);//点亮
+     delay(5000);
+     digitalWrite(pin,LOW);//熄灭
+     delay(1000);
+     }
+     //o
+     for(int i=0;i<3;i++)
+     {
+     digitalWrite(pin,HIGH);//点亮
+     delay(5000);
+     digitalWrite(pin,LOW);//熄灭
+     delay(1000);
+     }
+     //r
+     digitalWrite(pin,HIGH);//点亮
+     delay(1000);
+     digitalWrite(pin,LOW);//熄灭
+     delay(1000);
+     digitalWrite(pin,HIGH);//点亮
+     delay(5000);
+     digitalWrite(pin,LOW);//熄灭
+     delay(1000);
+     digitalWrite(pin,HIGH);//点亮
+     delay(1000);
+     digitalWrite(pin,LOW);//熄灭
+     delay(1000);
+     //l
+     digitalWrite(pin,HIGH);//点亮
+     delay(1000);
+     digitalWrite(pin,LOW);//熄灭
+     delay(1000);
+     digitalWrite(pin,HIGH);//点亮
+     delay(5000);
+     digitalWrite(pin,LOW);//熄灭
+     delay(1000);
+     for(int j=0;j<2;j++)
+     {
+     digitalWrite(pin,HIGH);//点亮
+     delay(1000);
+     digitalWrite(pin,LOW);//熄灭
+     delay(1000);
+     }
+     //d
+     digitalWrite(pin,HIGH);//点亮
+     delay(5000);
+     digitalWrite(pin,LOW);//熄灭
+     delay(1000);
+     digitalWrite(pin,HIGH);//点亮
+     delay(1000);
+     digitalWrite(pin,LOW);//熄灭
+     delay(1000);
+     digitalWrite(pin,HIGH);//点亮
+     delay(1000);
+     digitalWrite(pin,LOW);//熄灭
+     delay(1000);
+     
+     
+     Serial.println("Hello World!");//显示“Hello World！”字符串
+     }
+     */
+}
